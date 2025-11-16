@@ -130,7 +130,6 @@ export default function Jelajah() {
       {/* ================= PRODUK UNGGULAN ================= */}
       <section className="max-w-6xl mx-auto px-6 py-16 text-center">
         <h2 className="text-2xl font-bold">Produk Unggulan</h2>
-        <p className="text-gray-600 mt-1">Handpicked local gems that the community loves.</p>
 
         <div className="grid md:grid-cols-4 gap-6 mt-8">
           {filteredProduk.map((p, i) => (

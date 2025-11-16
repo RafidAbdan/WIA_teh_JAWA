@@ -100,7 +100,7 @@ function Footer() {
         <div>
           <h4 className="font-semibold mb-2">Ikuti Kami</h4>
           <div className="flex gap-4">
-            <a href="#" className="text-white/90"><img width="24" height="24" src="https://img.icons8.com/material-outlined/24/instagram-new--v1.png" alt="instagram-new--v1"/></a>
+            <a href="#" className="text-white/90"></a>
             <a href="#" className="text-white/90"><img width="24" height="24" src="https://img.icons8.com/material-outlined/24/twitter-new--v1.png" alt="twitter-new--v1"/></a>
           </div>
         </div>
@@ -165,7 +165,7 @@ export default function DetailPage() {
 
           <div>
             <p className="text-gray-700 leading-relaxed">
-              Mie Ayam & Bakso Binangun di dirikan oleh ... di daerah Pondok Labu yang melayani secara offline 
+              Mie Ayam & Bakso Binangun di dirikan oleh Mas Bagas di daerah Pondok Labu yang melayani secara offline 
               (QRIS/cash) dan online (GoFood/GrabFood), dengan biaya layanan online 25%. 
             </p>
 
