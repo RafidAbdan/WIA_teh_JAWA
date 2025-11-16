@@ -182,7 +182,7 @@ export default function DetailPage() {
 
               <div className="flex items-center gap-3">
                 <span className="text-red-600 text-2xl">📌</span>
-                <p className="font-semibold">Pangkalan Jati, Pondok Labu</p>
+                <p className="font-semibold">Pangkalan Jati, Pondok Labu, Jakarta Selatan</p>
               </div>
             </div>
           </div>

@@ -122,7 +122,7 @@ function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mt-4 text-gray-700 max-w-md text-sm md:text-base"
           >
-            Veats hadir sebagai platform yang membantu UMKM berkembang di era digital.
+           Veats hadir sebagai platform yang membantu UMKM berkembang di era digital. Kami menyediakan wadah bagi pelaku usaha untuk menampilkan produk mereka dengan cara yang lebih profesional, modern, dan mudah diakses oleh siapa saja.
           </motion.p>
 
           <motion.div
@@ -240,7 +240,7 @@ function About() {
             Setiap Pesanan Membuat Perubahan
           </h3>
           <p className="mt-4 text-gray-700 text-sm md:text-base">
-            Ketika Anda memilih Veats, Anda tidak hanya membeli makanan.
+            Ketika Anda memilih Veats, Anda tidak hanya membeli makanan. Anda mendukung mimpi, memberdayakan pemilik usaha kecil, dan melestarikan warisan kuliner yang kaya dari komunitas kami. Dukungan Anda membantu pengrajin lokal berkembang dan berbagi semangat mereka dengan dunia.
           </p>
         </motion.div>
 
