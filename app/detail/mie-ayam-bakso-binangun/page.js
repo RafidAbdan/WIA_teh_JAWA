@@ -100,8 +100,8 @@ function Footer() {
         <div>
           <h4 className="font-semibold mb-2">Ikuti Kami</h4>
           <div className="flex gap-4">
-            <a href="#" className="text-white/90">Instagram</a>
-            <a href="#" className="text-white/90">Twitter</a>
+            <a href="#" className="text-white/90"><img width="24" height="24" src="https://img.icons8.com/material-outlined/24/instagram-new--v1.png" alt="instagram-new--v1"/></a>
+            <a href="#" className="text-white/90"><img width="24" height="24" src="https://img.icons8.com/material-outlined/24/twitter-new--v1.png" alt="twitter-new--v1"/></a>
           </div>
         </div>
       </div>
