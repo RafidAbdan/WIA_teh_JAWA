@@ -165,8 +165,8 @@ export default function DetailPage() {
 
           <div>
             <p className="text-gray-700 leading-relaxed">
-              Geprek Mavera di dirikan oleh Pak Denny di daerah Pondok Labu yang melayani secara offline (QRIS/cash) dan online (GoFood/GrabFood/ShopeeFood), 
-              dengan biaya layanan online 25%. 
+              Mie Ayam & Bakso Binangun di dirikan oleh ... di daerah Pondok Labu yang melayani secara offline 
+              (QRIS/cash) dan online (GoFood/GrabFood), dengan biaya layanan online 25%. 
             </p>
 
             <div className="mt-6 space-y-4 text-gray-800">
