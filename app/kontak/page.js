@@ -1,167 +1,14 @@
-// "use client";
-
-// import { useState, useEffect } from "react";
-// import { motion } from "framer-motion";
-
-// /* ================= NAVBAR ================= */
-// function Navbar() {
-//   const [isScrolled, setIsScrolled] = useState(false);
-
-//   useEffect(() => {
-//     const handleScroll = () => setIsScrolled(window.scrollY > 40);
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   return (
-//     <nav
-//       className={`fixed top-0 left-0 w-full py-3 px-20 flex items-center justify-between z-50 backdrop-blur-xl transition-all duration-500 
-//       ${isScrolled ? "bg-white/30 shadow-sm" : "bg-white/80"}`}
-//     >
-//       {/* Logo */}
-//       <img src="/assets/logo.png" className="w-20 h-20 object-contain" />
-
-//       {/* Menu */}
-//       <ul className="hidden md:flex gap-12 text-base font-medium text-gray-700 mx-auto">
-//         <li><a href="/" className="hover:text-[#6FC233]">Beranda</a></li>
-//         <li><a href="/jelajah" className="hover:text-[#6FC233]">Jelajah</a></li>
-//         <li><a href="/kontak" className="hover:text-[#6FC233]">Kontak</a></li>
-//       </ul>
-//     </nav>
-//   );
-// }
-
-// /* ================= PAGE KONTAK ================= */
-// export default function Kontak() {
-//   return (
-//     <main className="min-h-screen bg-white text-gray-900">
-//       <Navbar />
-
-//       {/* BG Blur */}
-//       <div className="absolute -top-20 left-0 w-[460px] h-[460px] bg-[#6FC233]/40 blur-[140px] rounded-full"></div>
-//       <div className="absolute top-40 right-0 w-[460px] h-[460px] bg-[#FC9E84]/40 blur-[140px] rounded-full"></div>
-
-//       {/* SECTION */}
-//       <section className="relative max-w-5xl mx-auto px-6 pt-44 pb-20">
-//         {/* TITLE */}
-//         <motion.h1
-//           initial={{ opacity: 0, y: 20 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           className="text-4xl font-bold text-center mb-4"
-//         >
-//           Hubungi Kami
-//         </motion.h1>
-
-//         <p className="text-center text-gray-600 max-w-xl mx-auto">
-//           Ada pertanyaan, kerjasama, atau ingin mendaftarkan UMKM Anda?  
-//           Silakan isi form di bawah ini ✨
-//         </p>
-
-//         {/* FORM CARD */}
-//         <motion.div
-//           initial={{ opacity: 0, y: 20 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ delay: 0.2 }}
-//           className="mt-10 bg-white shadow-xl rounded-2xl p-8 border border-gray-200"
-//         >
-//           <form className="space-y-5">
-//             <div>
-//               <label className="font-semibold text-gray-700">Nama</label>
-//               <input
-//                 type="text"
-//                 className="w-full mt-1 p-3 rounded-lg border border-gray-300 outline-none focus:border-[#6FC233]"
-//                 placeholder="Masukkan nama Anda"
-//               />
-//             </div>
-
-//             <div>
-//               <label className="font-semibold text-gray-700">Email</label>
-//               <input
-//                 type="email"
-//                 className="w-full mt-1 p-3 rounded-lg border border-gray-300 outline-none focus:border-[#6FC233]"
-//                 placeholder="Masukkan email aktif"
-//               />
-//             </div>
-
-//             <div>
-//               <label className="font-semibold text-gray-700">Pesan</label>
-//               <textarea
-//                 rows="5"
-//                 className="w-full mt-1 p-3 rounded-lg border border-gray-300 outline-none focus:border-[#6FC233]"
-//                 placeholder="Tulis pesan Anda di sini..."
-//               ></textarea>
-//             </div>
-
-//             <button
-//               type="submit"
-//               className="w-full bg-[#6FC233] text-white py-3 rounded-lg hover:bg-[#5AB028] transition font-semibold"
-//             >
-//               Kirim Pesan
-//             </button>
-//           </form>
-//         </motion.div>
-//       </section>
-
-//       <Footer />
-//     </main>
-//   );
-// }
-
-// /* ================= FOOTER ================= */
-// function Footer() {
-//   return (
-//     <footer className="bg-[#69325A] text-white py-12 mt-10">
-//       <div className="max-w-6xl mx-auto px-8 grid md:grid-cols-4 gap-3">
-//         <div>
-//           <img src="/assets/logo.png" className="w-20 mb-3" />
-//           <p className="text-sm text-white/80">Platform UMKM kuliner modern dan terpercaya.</p>
-//         </div>
-
-//         <div>
-//           <h4 className="font-semibold mb-2">Tentang Kami</h4>
-//           <ul className="space-y-2 text-sm text-white/80">
-//             <li>Cerita Kami</li>
-//             <li>Berita</li>
-//             <li>Kontak</li>
-//           </ul>
-//         </div>
-
-//         <div>
-//           <h4 className="font-semibold mb-2">Pendukung</h4>
-//           <ul className="space-y-2 text-sm text-white/80">
-//             <li>Hubungi Kami</li>
-//             <li>Bantuan</li>
-//           </ul>
-//         </div>
-
-//         <div>
-//           <h4 className="font-semibold mb-2">Ikuti Kami</h4>
-//           <div className="flex gap-4">
-//             <a href="#" className="text-white/90">Instagram</a>
-//             <a href="#" className="text-white/90">YouTube</a>
-//           </div>
-//         </div>
-//       </div>
-
-//       <div className="mt-8 border-t border-white/10 pt-6 text-center text-xs text-white/70">
-//         © 2025 Veats. Semua hak dilindungi.
-//       </div>
-//     </footer>
-//   );
-// }
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-/* ---------- NAVBAR (FINAL) ---------- */
+/* ================= NAVBAR ================= */
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -169,126 +16,162 @@ function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 w-full py-3 px-20 flex items-center justify-between z-50 backdrop-blur-xl transition-all duration-500 
-      ${isScrolled ? "bg-white/30 opacity-80 shadow-sm" : "bg-white/80 opacity-80"}`}
+      ${isScrolled ? "bg-white/30 shadow-sm" : "bg-white/80"}`}
     >
-      {/* Logo */}
       <div className="flex items-center gap-3">
-        <img src="/assets/logo.png" alt="Veats logo" className="w-20 h-20 object-contain" />
+        <img src="/assets/logo.png" className="w-20 h-20 object-contain" />
       </div>
 
-      {/* Menu */}
       <ul className="hidden md:flex gap-12 text-base font-medium text-gray-700 mx-auto">
-        <li>
-          <a
-            href="/jelajah"
-            className="relative transition-all duration-300 hover:text-[#6FC233] 
-            after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-[#6FC233] 
-            after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
-          >
-            Jelajah
-          </a>
-        </li>
-
-        <li>
-          <a
-            href="/#tentang"
-            className="relative transition-all duration-300 hover:text-[#6FC233] 
-            after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-[#6FC233] 
-            after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
-          >
-            Tentang Kami
-          </a>
-        </li>
-
-        <li>
-          <a
-            href="/kontak"
-            className="relative transition-all duration-300 hover:text-[#6FC233] 
-            after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-[#6FC233] 
-            after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
-          >
-            Kontak
-          </a>
-        </li>
+        {[
+          { name: "Jelajah", link: "/jelajah" },
+          { name: "Tentang Kami", link: "/#tentang" },
+          { name: "Kontak", link: "/kontak" },
+        ].map((item, i) => (
+          <li key={i}>
+            <a
+              href={item.link}
+              className="relative transition-all duration-300 hover:text-[#6FC233] 
+              after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-[#6FC233] 
+              after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );
 }
-/* ================= HALAMAN KONTAK ================= */
-export default function Kontak() {
+
+/* ================= FOOTER ================= */
+function Footer() {
   return (
-    <main className="min-h-screen bg-white text-gray-900">
-      <Navbar />
+    <footer className="bg-[#69325A] text-white py-12 mt-20">
+      <div className="max-w-6xl mx-auto px-8 grid md:grid-cols-4 gap-3">
+        <div>
+          <img src="/assets/logo.png" className="w-20 h-20 object-contain mb-3" />
+          <p className="text-sm text-white/80">Platform yang membantu UMKM berkembang di era digital.</p>
+        </div>
 
-      {/* Blur Background Circles */}
-      <div className="absolute -top-40 left-0 w-[400px] h-[400px] bg-[#6FC233]/40 blur-[140px] rounded-full"></div>
-      <div className="absolute top-20 right-0 w-[450px] h-[450px] bg-[#FC9E84]/40 blur-[150px] rounded-full"></div>
-      <div className="absolute bottom-10 left-1/3 w-[380px] h-[380px] bg-[#69325A]/30 blur-[140px] rounded-full"></div>
+        <div>
+          <h4 className="font-semibold mb-2">Tentang Kami</h4>
+          <ul className="space-y-2 text-sm text-white/80">
+            <li>Cerita Kami</li>
+            <li>Berita</li>
+            <li>Kontak</li>
+          </ul>
+        </div>
 
-      {/* Title */}
-      <div className="pt-40 pb-10 text-center relative z-10">
-        <h1 className="text-3xl md:text-5xl font-bold">Hubungi Kami</h1>
-        <p className="text-gray-600 mt-2">
-          Kami siap membantu dan menjawab pertanyaan Anda.
-        </p>
+        <div>
+          <h4 className="font-semibold mb-2">Pendukung</h4>
+          <ul className="space-y-2 text-sm text-white/80">
+            <li>Kontak</li>
+            <li>Hubungi Kami</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="font-semibold mb-2">Ikuti Kami</h4>
+          <div className="flex gap-4">
+            <a href="#" className="text-white/90">Instagram</a>
+            <a href="#" className="text-white/90">Twitter</a>
+          </div>
+        </div>
       </div>
 
-      {/* CONTENT GRID */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 pb-20">
+      <div className="mt-8 border-t border-white/10 pt-6 text-center text-xs text-white/70">
+        © {new Date().getFullYear()} Veats. Semua hak dilindungi undang-undang.
+      </div>
+    </footer>
+  );
+}
 
-        {/* BAGIAN KIRI = MAP + INFO KONTAK */}
+/* ================= PAGE KONTAK ================= */
+export default function KontakPage() {
+  return (
+    <main className="min-h-screen bg-white text-gray-900 antialiased">
+      <Navbar />
+
+      {/* BACKGROUND BLUR */}
+      <div className="absolute top-0 left-0 w-[480px] h-[480px] bg-[#79C268]/35 blur-[150px] rounded-full"></div>
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#FC9E84]/35 blur-[150px] rounded-full"></div>
+
+      {/* CONTENT */}
+      <section className="pt-40 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+        
+        {/* LEFT TEXT + IMAGE */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
+          initial={{ opacity: 0, x: -25 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-6"
         >
-          {/* Map */}
-          <div className="w-full h-[350px] rounded-xl overflow-hidden shadow-lg">
-            {/* GAMVAAARRRR */}
-          </div>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">Hubungi Kami</h1>
+          <p className="text-gray-700 max-w-md">
+            Kirim email, nomor telepon, atau lengkapi formulir untuk mempelajari bagaimana
+            Veats dapat menyelesaikan masalah Anda.
+          </p>
 
-
+          <img
+            src="/assets/tehKontak.png"
+            className="w-80 mt-8 drop-shadow-xl"
+          />
         </motion.div>
-        {/* FORM BAGIAN KANAN */}
+
+        {/* RIGHT FORM CARD */}
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
+          initial={{ opacity: 0, x: 25 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="bg-white shadow-lg rounded-xl p-8"
+          className="bg-white rounded-2xl shadow-xl p-8"
         >
-          <h2 className="text-xl font-semibold mb-4">Kirim Pesan</h2>
+          <h2 className="text-xl font-bold mb-6">Formulir Pengaduan</h2>
 
           <form className="space-y-4">
-            <div>
-              <label className="text-sm font-medium">Nama</label>
-              <input type="text" className="w-full mt-1 px-4 py-3 border rounded-lg" placeholder="Nama lengkap" />
+
+            {/* 2 COL INPUT */}
+            <div className="grid grid-cols-2 gap-4">
+              <input
+                type="text"
+                placeholder="Nama Depan"
+                className="px-4 py-3 rounded-md bg-gray-100 outline-none"
+              />
+              <input
+                type="text"
+                placeholder="Nama Belakang"
+                className="px-4 py-3 rounded-md bg-gray-100 outline-none"
+              />
             </div>
 
-            <div>
-              <label className="text-sm font-medium">Email</label>
-              <input type="email" className="w-full mt-1 px-4 py-3 border rounded-lg" placeholder="Email aktif" />
-            </div>
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full px-4 py-3 rounded-md bg-gray-100 outline-none"
+            />
 
-            <div>
-              <label className="text-sm font-medium">No. HP</label>
-              <input type="text" className="w-full mt-1 px-4 py-3 border rounded-lg" placeholder="Nomor HP" />
-            </div>
+            <input
+              type="text"
+              placeholder="No. Telepon"
+              className="w-full px-4 py-3 rounded-md bg-gray-100 outline-none"
+            />
 
-            <div>
-              <label className="text-sm font-medium">Pesan</label>
-              <textarea className="w-full mt-1 px-4 py-3 border rounded-lg h-32 resize-none" placeholder="Tulis pesan Anda..."></textarea>
-            </div>
+            <textarea
+              placeholder="Bagaimana kami bisa membantu?"
+              rows="4"
+              className="w-full px-4 py-3 rounded-md bg-gray-100 outline-none"
+            ></textarea>
 
-            <button className="w-full py-3 bg-[#6FC233] text-white font-semibold rounded-lg hover:bg-[#5fb328]">
-              Kirim Pesan
+            <button
+              type="submit"
+              className="w-full bg-[#5A7DDF] hover:bg-[#4d6ec7] text-white py-3 rounded-lg font-medium"
+            >
+              Kirim
             </button>
           </form>
         </motion.div>
+      </section>
 
-
-
-      </div>
+      <Footer />
     </main>
   );
 }

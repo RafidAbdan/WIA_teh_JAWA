@@ -15,11 +15,11 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full py-3 px-20 flex items-center justify-between z-50 transition-all duration-500 backdrop-blur-xl ${
+      className={`fixed top-0 left-0 w-full py-3 px-6 md:px-20 flex items-center justify-between z-50 transition-all duration-500 backdrop-blur-xl ${
         isScrolled ? "bg-white/30 shadow-sm" : "bg-white/80"
       }`}
     >
-      <img src="/assets/logo.png" className="w-20 h-20 object-contain" />
+      <img src="/assets/logo.png" className="w-16 h-16 md:w-20 md:h-20 object-contain" />
 
       <ul className="hidden md:flex gap-12 text-base font-medium text-gray-700 mx-auto">
         <li><a href="/" className="hover:text-[#6FC233]">Beranda</a></li>
@@ -54,7 +54,14 @@ const detailData = {
     { nama: "Putri", rating: "⭐ 4.8", komentar: "Selalu rame, tapi worth it!" },
   ],
 
-  galeri: ["/assets/galeri1.jpg", "/assets/galeri2.jpg", "/assets/mieyamin.jpg", "/assets/miegoreng.jpg", "/assets/miegoreng.jpg", "/assets/miegoreng.jpg", ],
+  galeri: [
+    "/assets/galeri1.jpg",
+    "/assets/galeri2.jpg",
+    "/assets/mieyamin.jpg",
+    "/assets/miegoreng.jpg",
+    "/assets/miegoreng.jpg",
+    "/assets/miegoreng.jpg",
+  ],
 
   rekomendasi: [
     { nama: "Bumbu Ndesso", rating: "⭐ 4.6", img: "/assets/bumbundeso.png" },
@@ -67,7 +74,7 @@ const detailData = {
 function Footer() {
   return (
     <footer id="kontak" className="bg-[#69325A] text-white py-12 mt-10">
-      <div className="max-w-6xl mx-auto px-8 grid md:grid-cols-4 gap-3">
+      <div className="max-w-6xl mx-auto px-6 md:px-8 grid md:grid-cols-4 gap-3">
         <div>
           <img src="/assets/logo.png" alt="Veats" className="w-20 h-20 object-contain mb-3" />
           <p className="text-sm text-white/80">Platform yang membantu UMKM berkembang.</p>
@@ -112,7 +119,7 @@ export default function DetailPage() {
   const [nama, setNama] = useState("");
   const [pesanan, setPesanan] = useState("");
 
-  const nomorWA = "6281287675177"; // ← otomatis bot WA ke penjual
+  const nomorWA = "6281287675177";
 
   const kirimWA = () => {
     const pesan = `Halo! Saya ingin pesan.%0A%0ANama: ${nama}%0APesanan: ${pesanan}%0A%0ATerima kasih 🙏`;
@@ -123,34 +130,43 @@ export default function DetailPage() {
     <main className="min-h-screen bg-white text-gray-900">
       <Navbar />
 
-      {/* HEADER */}
+      {/* HEADER RESPONSIVE FIX */}
       <section className="relative w-full pt-24">
-        <img src={detailData.gambarHeader} className="w-full max-h-[500px] object-cover" />
-
         <img
-          src={detailData.logoResto}
-          className="absolute top-30 right-10 w-28 h-28 rounded-full shadow-xl object-cover border-4 border-white"
+          src={detailData.gambarHeader}
+          className="w-full max-h-[450px] md:max-h-[500px] object-cover"
         />
 
-        <h1 className="absolute bottom-10 left-10 text-white font-extrabold drop-shadow-2xl leading-tight">
-          <span className="text-4xl md:text-6xl">{detailData.nama1}</span><br />
-          <span className="text-5xl md:text-7xl uppercase">{detailData.nama2}</span>
+        {/* LOGO RESPONSIVE */}
+        <img
+          src={detailData.logoResto}
+          className="absolute top-10 right-5 md:top-20 md:right-10 w-20 h-20 md:w-28 md:h-28 rounded-full shadow-xl object-cover border-4 border-white"
+        />
+
+        {/* TITLE */}
+        <h1 className="
+          absolute bottom-5 left-5 md:bottom-10 md:left-10 
+          text-white font-extrabold drop-shadow-2xl leading-tight
+        ">
+          <span className="text-3xl md:text-6xl">{detailData.nama1}</span><br />
+          <span className="text-4xl md:text-7xl uppercase">{detailData.nama2}</span>
         </h1>
       </section>
 
       <div className="max-w-6xl mx-auto px-6">
 
         {/* PROFIL RESTO */}
-        <section className="max-w-6xl mx-auto px-6 mt-20 grid md:grid-cols-2 gap-10 items-center">
+        <section className="mt-20 grid md:grid-cols-2 gap-10 items-center">
           <div className="flex justify-center">
-            <div className="w-80 h-80 rounded-full border-[10px] border-red-500 overflow-hidden shadow-lg">
+            <div className="w-60 h-60 md:w-80 md:h-80 rounded-full border-[10px] border-red-500 overflow-hidden shadow-lg">
               <img src="/assets/miayambinangun.png" className="w-full h-full object-cover" />
             </div>
           </div>
 
           <div>
             <p className="text-gray-700 leading-relaxed">
-              Mie Ayam & Bakso Binangun didirikan oleh ... dan menjadi favorit mahasiswa UPN.
+              Geprek Mavera di dirikan oleh Pak Denny di daerah Pondok Labu yang melayani secara offline (QRIS/cash) dan online (GoFood/GrabFood/ShopeeFood), 
+              dengan biaya layanan online 25%. 
             </p>
 
             <div className="mt-6 space-y-4 text-gray-800">
@@ -172,57 +188,50 @@ export default function DetailPage() {
           </div>
         </section>
 
+        
         {/* MENU POPULER */}
         <section className="mt-20">
-          <h2 className="text-3xl font-bold mb-20">Menu Paling Populer</h2>
+          <h2 className="text-3xl font-bold mb-20 text-center md:text-left">Menu Paling Populer</h2>
 
-          <div className="grid md:grid-cols-3 gap-10 mt-10">
+          <div className="grid md:grid-cols-3 gap-10 mt-10 place-items-center">
             {detailData.menuPopuler.map((item, i) => (
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.05 }}
-                className="relative bg-gradient-to-b from-[#F8EBDA] to-[#D4FFB5] rounded-2xl p-6 shadow-xl mx-auto w-[260px]"
+                className="relative bg-gradient-to-b from-[#F8EBDA] to-[#D4FFB5] rounded-2xl p-6 shadow-xl w-[260px]"
               >
                 <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#6FC233] absolute -top-16 left-1/2 -translate-x-1/2 shadow-lg">
                   <img src={item.img} className="w-full h-full object-cover" />
                 </div>
 
-                <div className="pt-15 text-center">
+                <div className="pt-20 text-center">
                   <h3 className="font-bold text-xl text-gray-800">{item.nama}</h3>
                   <p className="text-[#FF7A00] text-xl mt-2 font-extrabold">{item.harga}</p>
                 </div>
 
                 <div className="text-center mt-2">
-                  <p className=" font-bold text-yellow-500">
-                    ⭐ 4.9 / 5.0
-                  </p>
+                  <p className=" font-bold text-yellow-500">⭐ 4.9 / 5.0</p>
                 </div>
-
               </motion.div>
             ))}
           </div>
         </section>
 
-        {/* MAPS + WA FORM */}
-        <section className="mt-20 grid md:grid-cols-2 gap-10">
 
-          {/* MAPS */}
+        {/* MAPS + WA */}
+        <section className="mt-20 grid md:grid-cols-2 gap-10">
           <div>
             <h2 className="text-xl font-bold mb-3">Lokasi UMKM</h2>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126899.47809331416!2d106.71307695301827!3d-6.315023821833172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef0063730015%3A0xbcf9c4e83ca26572!2sMIE%20AYAM%20%26%20BAKSO%20BINANGUN!5e0!3m2!1sen!2sid!4v1763266240811!5m2!1sen!2sid" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126899.47809331416!2d106.71307695301827!3d-6.315023821833172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef0063730015%3A0xbcf9c4e83ca26572!2sMIE%20AYAM%20%26%20BAKSO%20BINANGUN!5e0!3m2!1sen!2sid!4v1763266240811!5m2!1sen!2sid"
               className="w-full h-64 rounded-xl shadow"
-              allowFullScreen=""
               loading="lazy"
             ></iframe>
           </div>
 
-          {/* FORM WA */}
           <div>
             <h2 className="text-xl font-bold mb-3">Pemesanan</h2>
-
             <div className="bg-white shadow p-6 rounded-xl space-y-4">
-
               <input
                 className="w-full border px-4 py-2 rounded-md"
                 placeholder="Nama Anda"
@@ -245,25 +254,19 @@ export default function DetailPage() {
               </button>
             </div>
           </div>
-
         </section>
 
-        {/* REVIEW – STYLE FIGMA */}
-        <section className="mt-20 bg-[#E9FFD9] p-10 rounded-2xl">
-
+        {/* REVIEW */}
+        <section className="mt-20 bg-[#E9FFD9] p-6 md:p-10 rounded-2xl">
           <h2 className="text-3xl font-bold">
             Apa Yang Mereka Katakan <span className="text-[#6FC233]">Tentang</span> UMKM Ini
           </h2>
 
           <p className="text-gray-600 max-w-md mt-3">
-            Kami mengumpulkan beberapa pesan dan masukkan demi perkembangan usaha yang
-            lancar untuk masa mendatang.
+            Kami mengumpulkan beberapa pesan dan masukkan demi perkembangan usaha yang lebih baik.
           </p>
 
-          {/* KIRI: Rating + Button */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between mt-6">
-
-            {/* Rating Box */}
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-yellow-500 text-4xl">⭐</span>
@@ -272,7 +275,6 @@ export default function DetailPage() {
               <p className="text-gray-600">10 reviews</p>
             </div>
 
-            {/* Tombol Add Review */}
             <a
               href="https://maps.app.goo.gl/BmzuNBNaWCNCE3ip7"
               target="_blank"
@@ -282,18 +284,11 @@ export default function DetailPage() {
             </a>
           </div>
 
-          {/* Card Review */}
           <div className="grid md:grid-cols-3 gap-6 mt-10">
-
             {detailData.reviews.map((r, i) => (
-              <div
-                key={i}
-                className="bg-[#FAD8A8] p-6 rounded-2xl shadow-lg"
-              >
+              <div key={i} className="bg-[#FAD8A8] p-6 rounded-2xl shadow-lg">
                 <div className="flex items-center gap-3">
-                  {/* Avatar Default */}
                   <div className="w-12 h-12 rounded-full bg-gray-300"></div>
-
                   <div>
                     <p className="font-bold capitalize">{r.nama}</p>
                     <p className="text-sm text-gray-500">Beberapa bulan lalu</p>
@@ -312,11 +307,8 @@ export default function DetailPage() {
                 </div>
               </div>
             ))}
-
           </div>
-
         </section>
-
 
         {/* GALERI */}
         <section className="mt-20">
