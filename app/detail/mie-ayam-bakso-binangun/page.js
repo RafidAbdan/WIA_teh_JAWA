@@ -58,7 +58,7 @@ const detailData = {
     "/assets/galeri1.jpg",
     "/assets/galeri2.jpg",
     "/assets/mieyamin.jpg",
-    "/assets/miegoreng.jpg",
+    "/assets/mie.jpg",
     "/assets/miegoreng.jpg",
     "/assets/miegoreng.jpg",
   ],
@@ -216,6 +216,19 @@ export default function DetailPage() {
             ))}
           </div>
         </section>
+        {/* MENU TAMBAHAN — FOTO MENU SELENGKAPNYA */}
+        <section className="mt-20">
+          <h2 className="text-lg font-semibold mb-3">Lihat Menu Selengkapnya</h2>
+
+          <div className="w-full flex justify-center">
+            <img 
+              src="/assets/menu.jpg" 
+              className="rounded-xl shadow-xl w-full max-w-md object-cover"
+              alt="Menu UMKM Binangun"
+            />
+          </div>
+        </section>
+
 
 
         {/* MAPS + WA */}
@@ -263,7 +276,7 @@ export default function DetailPage() {
           </h2>
 
           <p className="text-gray-600 max-w-md mt-3">
-            Kami mengumpulkan beberapa pesan dan masukkan demi perkembangan usaha yang lebih baik.
+            Kami mengumpulkan beberapa pesan dan masukkan demi perkembangan usaha yang lancar untuk masa mendatang
           </p>
 
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between mt-6">
@@ -284,11 +297,19 @@ export default function DetailPage() {
             </a>
           </div>
 
+          {/* Kartu Review */}
           <div className="grid md:grid-cols-3 gap-6 mt-10">
+
             {detailData.reviews.map((r, i) => (
               <div key={i} className="bg-[#FAD8A8] p-6 rounded-2xl shadow-lg">
+                
+                {/* FOTO USER */}
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gray-300"></div>
+                  <img 
+                    src={`/assets/muka${i + 1}.png`} 
+                    className="w-12 h-12 rounded-full object-cover" 
+                  />
+
                   <div>
                     <p className="font-bold capitalize">{r.nama}</p>
                     <p className="text-sm text-gray-500">Beberapa bulan lalu</p>
@@ -307,8 +328,10 @@ export default function DetailPage() {
                 </div>
               </div>
             ))}
+
           </div>
         </section>
+
 
         {/* GALERI */}
         <section className="mt-20">
